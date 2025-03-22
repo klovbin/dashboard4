@@ -12,6 +12,7 @@
     font-family: Montserrat;
     padding: 0 10px;
     border-radius: 16px;
+    z-index: 100;
     //border-right: 1px solid rgba(255, 255, 255, 0.1);
     
     @media (max-width: 550px) {
@@ -87,6 +88,7 @@
     font-size: 24px;
     cursor: pointer;
     z-index: 102;
+    display: none;
   }
 }
 

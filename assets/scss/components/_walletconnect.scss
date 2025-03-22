@@ -3,7 +3,6 @@
 .connect {
   &__wrapper {
     font-family: Montserrat;
-    position: relative;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
@@ -22,7 +21,6 @@
 .wallet {
   &__wrapper {
     margin-left: 20px;
-    position: relative;
   }
   &__label {
     @include adaptiveValue("font-size", 60, 30, 0, 1920, 320);
@@ -64,11 +62,10 @@
     left: -50px;
     z-index: 1;
     width: 110vw;
-    opacity: 0.7;
-    @media (max-width: 1000px) {
-      top: 150px;
-      opacity: 0.3;
-    }
+    opacity: 0.3;
+    @include adaptiveValue("width", 800, 300, 0, 1920, 320);
+    @include adaptiveValue("left", 512, -10, 0, 1920, 320);
+
   }
 }
 

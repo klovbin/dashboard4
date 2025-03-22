@@ -42,7 +42,7 @@ onMounted(() => {
       <h1 class="wallet__label">Wallet Connect</h1>
       <h2 class="wallet__description">To receive an airdrop, you need to connect your wallet. This allows the system to verify your eligibility and distribute the tokens directly to your address. Make sure to use a compatible wallet and follow the<br> official instructions to claim your <br>rewards securely.</h2>
       <button class="wallet__connect" @click="modal.open()">Connect Wallet</button>
-      <img src="/img/line.svg" alt="lines" class="wallet__lines">
+      <img src="/img/game.png" alt="lines" class="wallet__lines">
     </div>
   </section>
 </template>

@@ -39,9 +39,6 @@ watch(() => route.path, () => {
 <template>
   <div v-if="shouldShowSidebar && isMobile && isMenuOpen" class="sidebar-overlay" @click="closeMenu"></div>
   <div v-if="shouldShowSidebar" class="sidebar__wrapper" :class="{ 'sidebar--open': isMenuOpen, 'sidebar--mobile': isMobile }">
-    <button v-if="isMobile" class="close-btn" @click="closeMenu">
-      <span class="close-icon"></span>
-    </button>
     <div class="sidebar__content">
       <div class="logo-container">
         <h1 class="logo__title">MarsX</h1>
@@ -180,6 +177,7 @@ watch(() => route.path, () => {
   cursor: pointer;
   z-index: 102;
   transition: all 0.3s ease;
+  display: none;
 }
 
 .close-btn:hover {

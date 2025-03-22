@@ -126,22 +126,3 @@ onUnmounted(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.exchange {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-/* @media (max-width: 550px) {
-  .layout.menu-open {
-    margin-left: 240px;
-    transition: margin-left 0.3s ease;
-  }
-  
-  .layout {
-    transition: margin-left 0.3s ease;
-    margin-left: 0;
-  }
-} */
-</style>

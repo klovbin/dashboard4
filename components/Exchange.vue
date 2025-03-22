@@ -6,7 +6,7 @@ import { useUserState } from '../composables/useUserState';
 // Get the shared user state
 const { tokenBalance, userEmail, updateUserData, recordExchange, canExchange, lastExchangeTime } = useUserState();
 
-const tokenName = ref('DRC');
+const tokenName = ref('MRX');
 const course = ref(1);
 const getAmount = ref('');
 const payAmount = ref('');
@@ -320,7 +320,6 @@ onUnmounted(() => {
   box-sizing: border-box;
   max-width: 100%;
   max-height: 100%;
-  min-height: 650px;
 }
 
 .exchange-form {

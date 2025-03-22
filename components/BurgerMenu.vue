@@ -1,27 +1,10 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue';
 import { useMenu } from '~/composables/useMenu';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
 const { isMenuOpen, toggleMenu } = useMenu();
 const route = useRoute();
-
-// Локальное состояние для отображения кнопки
-const isMobile = ref(false);
-
-const checkScreenSize = () => {
-  isMobile.value = window.innerWidth <= 550;
-};
-
-onMounted(() => {
-  checkScreenSize();
-  window.addEventListener('resize', checkScreenSize);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', checkScreenSize);
-});
 
 const shouldShowBurger = computed(() => {
   return route.path !== '/';
@@ -30,7 +13,7 @@ const shouldShowBurger = computed(() => {
 
 <template>
   <div 
-    v-if="shouldShowBurger && isMobile"
+    v-if="shouldShowBurger"
     class="burger-container" 
     :class="{ 'is-open': isMenuOpen }" 
   >
@@ -54,10 +37,10 @@ const shouldShowBurger = computed(() => {
   top: 20px;
   right: 20px;
   z-index: 101;
-  display: none;
+  display: block;
   
-  @media (max-width: 550px) {
-    display: block;
+  @media (min-width: 551px) {
+    display: none;
   }
 }
 

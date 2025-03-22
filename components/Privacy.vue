@@ -33,8 +33,8 @@
 .privacy-container {
   margin-top: 100px;
   color: #f8f9fa;
-  min-height: max-content ;
-  width: 100%;
+  min-height: max-content;
+  width: 100vw;
   padding: 0;
   font-family: 'Inter', 'Roboto', sans-serif;
   @media (max-width: 550px) {
@@ -95,10 +95,6 @@ p {
   border-radius: 12px;
   border-left: none;
   margin: 1.5rem 0;
-}
-
-ol {
-  padding-left: 1.5rem;
 }
 
 li {
