@@ -1,0 +1,121 @@
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .completed {
+    background-color: #008000;
+    color: white;
+  }
+  
+  .failed {
+    background-color: #FF0000;
+    color: white;
+  }
+  
+  .pending {
+    background: linear-gradient(to right, rgb(76, 69, 165), rgb(101, 94, 192));
+    color: white;
+  }
+  
+  /* Добавляем стили для строк таблицы */
+  .table__body tr {
+    background-color: #1c1e22; /* Темный фон для строк */
+  }
+  
+  /* Стиль для четных строк (зебра) */
+  .table__body tr:nth-child(even) {
+    background-color: #23262c;
+  }
+  
+  /* Добавляем небольшой hover-эффект */
+  .table__body tr:hover {
+    background-color: #2a2e35;
+  }
+  
+  /* Удаляем отступы между строками */
+  .table__wrapper {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .table__body tr {
+    background-color: #0e0e10;
+    margin: 10px 0;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    
+    &:not(:last-child) {
+      margin-bottom: 2px;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 5%;
+        width: 90%;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent
+        );
+      }
+    }
+  }
+  
+  .table__body tr:nth-child(even) {
+    background-color: #121213;
+  }
+  
+  .table__body tr:hover {
+    background-color: #121315;
+  }
+  
+  .table__body td {
+    margin: 0;
+    border: none;
+    padding: 20px 15px; /* Увеличиваем внутренние отступы ячеек */
+  }
+
+  .pagination {
+    font-family: Montserrat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  .pagination__button {
+    background-color: #23262c;
+    border: 1px solid #2a2e35;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .pagination__button:hover:not(:disabled) {
+    background-color: #2a2e35;
+  }
+  
+  .pagination__button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .pagination__info {
+    font-size: 14px;
+    color: white;
+  }
+
+  .status-badge.completed {
+    background-color: #28a745;
+    color: #ffffff;
+  }

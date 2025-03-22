@@ -1,0 +1,33 @@
+.header {
+    &__wrapper {
+        margin-top: 130px;
+        font-family: Montserrat;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 1419.98px) {
+            margin-left: 0px;
+          }
+    }
+}
+
+.info {
+    &__label {
+        color: white;
+    }
+
+    &__description {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.address {
+    &__wrapper {
+        padding: 0 10px;
+    }
+    &__label {
+        color: white;
+        @media (max-width: 1419.98px) {
+            display: none;
+          }
+    }
+}

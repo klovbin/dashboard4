@@ -1,0 +1,237 @@
+/* Variables */
+@use "sass:color";
+@use "../common/variables";
+
+.no-outline {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Modal positioning and overlay */
+.modal-dialog {
+  @extend .no-outline;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+
+  &::backdrop {
+    background: none;
+  }
+}
+
+/* Modal content box */
+.modal-content {
+  @extend .no-outline;
+  background-color: #121212;
+  border-radius: variables.$border-radius;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  color: variables.$text-light;
+  padding: 2rem;
+}
+
+form,
+fieldset {
+  @extend .no-outline;
+}
+
+/* Header styles */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: variables.$text-light;
+    margin: 0;
+  }
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: variables.$text-secondary;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: variables.$text-light;
+  }
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: variables.$text-secondary;
+    font-size: 0.9rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: variables.$text-light;
+    font-size: 1rem;
+    transition: all 0.2s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      border-color: #4C45A5;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
+      -webkit-text-fill-color: variables.$text-light !important;
+      caret-color: variables.$text-light;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  /* Password match indicator */
+  &.password-confirm {
+    position: relative;
+    
+    &.match::after {
+      content: "✓";
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      color: #4CAF50;
+      font-size: 1.2rem;
+    }
+    
+    &.mismatch::after {
+      content: "×";
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      color: #f44336;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* Button styles */
+%button-base {
+  padding: 0.75rem 1.5rem;
+  border-radius: variables.$border-radius;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  button {
+    @extend %button-base;
+    flex: 1;
+
+    &[type="submit"] {
+      background-color: #4C45A5;
+      color: variables.$text-light;
+      border: none;
+
+      &:hover {
+        background-color: color.adjust(#4C45A5, $lightness: 5%);
+      }
+    }
+
+    &[type="button"] {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: variables.$text-secondary;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: variables.$text-light;
+      }
+    }
+  }
+}
+
+/* Footer styles */
+.modal-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: variables.$text-secondary;
+  font-size: 0.9rem;
+
+  a {
+    color: #4C45A5;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: color.adjust(#4C45A5, $lightness: 10%);
+    }
+  }
+}
+
+/* Visually hidden elements (for screen readers) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Error message styles */
+.error-message {
+  background-color: rgba(variables.$error-color, 0.1);
+  color: variables.$error-color;
+  padding: 0.75rem 1rem;
+  border-radius: variables.$border-radius;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(variables.$error-color, 0.2);
+}
+
+/* Loading state styles */
+fieldset[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  
+  input, button {
+    cursor: not-allowed;
+  }
+}

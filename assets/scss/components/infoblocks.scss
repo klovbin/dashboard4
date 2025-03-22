@@ -1,0 +1,45 @@
+.info {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    @media (max-width: 1100px) {
+      display: none;
+    }
+  }
+}
+
+.card {
+  &__wrapper {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 24px;
+    border-radius: 16px;
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: row;
+    background-color: #26292E;
+  }
+
+  &__icon {
+    &__wrapper {
+      margin: auto 20px auto 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      background-color: rgba(240,185,11,0.3) ;
+      padding: 10px;
+    }
+  }
+  &__label {
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+  &__description {
+    color: rgba(255,255,255,0.5);
+    margin-top: 10px;
+  }
+}

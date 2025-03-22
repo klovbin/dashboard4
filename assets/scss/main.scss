@@ -1,0 +1,51 @@
+@use "common/mixins" as *;
+@use "common/container" as *;
+
+@use "components/sidebar";
+@use "components/loginform";
+@use "components/registerform";
+@use "components/header";
+@use 'components/balances';
+@use 'components/infoblocks';
+@use 'components/table';
+@use 'components/transactiontable';
+@use 'components/exchange';
+@use 'components/walletconnect';
+@use 'components/baner';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  background-color: #000000;
+}
+
+.layout {
+  margin-top: 100px;
+  display: flex;
+  @media (max-width: 550px) {
+    margin-top: 40px;
+  }
+  &__header {
+    display: flex;
+    width: 100%;
+    @media (max-width: 725.98px) {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1419.98px) {
+      width: 100%;
+    }
+  }
+  &__bar {
+    //background-color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+}

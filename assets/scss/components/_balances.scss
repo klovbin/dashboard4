@@ -1,0 +1,56 @@
+.balances {
+    &__wrapper {
+      font-family: Montserrat;
+      margin-top: 20px;
+      width: 100%;
+      padding: 20px;
+      background-color: #100D22;
+      display: flex;
+      flex-direction: row;
+      border-radius: 10px;
+      margin-right: 10px;
+      text-align: center;
+      align-items: center;
+      @media (max-width: 725.98px) {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+
+    &__wrapper * {
+      margin: 10px auto;
+    }
+
+    &__separator {
+      color: rgba(255,255,255,0.3);
+      margin: 0 30px;
+      height: 80%;
+      @media (max-width: 725.98px) {
+        margin: 0 15px;
+      }
+    }
+}
+
+.token {
+
+  &__balance {
+    color: white;
+    border: 0;
+    &__label {
+      color: rgba(255,255,255,0.5);
+    }
+  }
+}
+
+.wallet {
+  &__balance {
+    color: white;
+    border: 0;
+    &__label {
+      color: rgba(255,255,255,0.5);
+    }
+  }
+}

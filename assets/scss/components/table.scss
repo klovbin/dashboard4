@@ -1,0 +1,100 @@
+.table {
+  &__wrapper {
+    padding: 0 10px;
+    width: 100%;
+    font-family: Montserrat;
+    color: white;
+    margin-top: 20px;
+    border-radius: 16px;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100vw;
+
+    @media (max-width: 580px) {
+      margin-top: 0;
+    }
+  }
+  &__header {
+    width: 970px;
+  }
+
+  &__body {
+    
+  }
+
+  &__body td {
+    text-align: center; // Центрирование текста
+    padding: 15px; // Добавляем отступы
+    vertical-align: middle; // Вертикальное центрирование
+    border: none;
+  }
+
+  &__body tr {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__titles {
+    background-color: #121213;
+    border-radius: 10px;
+  }
+
+  &__titles th {
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+    border: none;
+  }
+  
+  &__titles th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  &__titles th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  @media (max-width: 580px) {
+    &__wrapper {
+      display: block;
+      border-radius: 0;
+    }
+
+    &__header {
+      display: none;
+    }
+
+    &__body {
+      display: block;
+    }
+
+    &__body tr {
+      display: block;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    &__body td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      text-align: right;
+      border-bottom: 1px solid #2a2e35;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &::before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-align: left;
+      }
+    }
+  }
+}
